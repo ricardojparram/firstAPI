@@ -21,11 +21,11 @@
 				method: type,
 				url: 'http://localhost/ricardoAPI/',
 				data: {
-					id: '5',
-					name:'José',
-					lastname: 'Alvarado',
-					email: 'jose.a@hotmail.com',
-					gender: 'masculino'
+					// id: '5',
+					// name:'José',
+					// lastname: 'Alvarado',
+					// email: 'jose.a@hotmail.com',
+					// gender: 'masculino'
 				},
 				success(e){
 					console.log(e);
