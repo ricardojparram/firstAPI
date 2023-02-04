@@ -50,10 +50,12 @@
 		case 'DELETE' :
 
 			parse_str(file_get_contents("php://input"), $_DELETE);
-			// print_r($_DELETE);
+
 			if(isset($_DELETE['id'])){
 				$user = new usuario();
 				$user->deleteUser($_DELETE['id']);
+			}else{
+				echo json_encode(['error' => 'invalid parameters']);
 			}
 
 		break;

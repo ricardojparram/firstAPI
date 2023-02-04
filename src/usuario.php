@@ -30,11 +30,10 @@
 				die();
 			}
 			if($gender != 'masculino'){
-				echo json_encode(['error' => 'invalid gender.']);
-				die();
-			}else if($gender != 'femenino'){
-				echo json_encode(['error' => 'invalid gender.']);
-				die();
+				if($gender != 'femenino'){
+					echo json_encode(['error' => 'invalid gender.']);
+					die();
+				}
 			}
 
 			$this->name = $name;
