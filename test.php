@@ -15,6 +15,13 @@
 	
 	<script src="js/jquery.js"></script>
 	<script>
+
+		/*
+			POST needs: name,lastname,email,gender.
+			GET needs: nothing or an id for searching a single user.
+			PUT needs: name, lastname, email, gender, id.
+			DELETE needs: id.
+		*/
 			
 		function REQUEST(type){
 			$.ajax({

@@ -17,6 +17,23 @@
 
 		public function createUser($name, $lastname, $email, $gender){
 
+			if(preg_match_all("/^[a-zA-ZÀ-ÿ]{3,30}$/", $name) == false){
+				echo json_encode(['error' => 'invalid name.']);
+				die();
+			}
+			if(preg_match_all("/^[a-zA-ZÀ-ÿ]{3,30}$/", $lastname) == false){
+				echo json_encode(['error' => 'invalid lastname.']);
+				die();
+			}
+			if(preg_match_all("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email) == false){
+				echo json_encode(['error' => 'invalid email.']);
+				die();
+			}
+			if($gender != 'masculino' || $gender != 'femenino'){
+				echo json_encode(['error' => 'invalid email.']);
+				die();
+			}
+
 			$this->name = $name;
 			$this->lastname = $lastname;
 			$this->email = $email;
@@ -52,6 +69,10 @@
 		}
 
 		public function getUser($id){
+			if(is_numeric($id) == false){
+				echo json_encode(['error' => 'invalid id.']);
+				die();
+			}
 			$this->id = $id;
 			try {
 				
@@ -67,6 +88,27 @@
 		}
 
 		public function putUser($name, $lastname, $email, $gender, $id){
+
+			if(preg_match_all("/^[a-zA-ZÀ-ÿ]{3,30}$/", $name) == false){
+				echo json_encode(['error' => 'invalid name.']);
+				die();
+			}
+			if(preg_match_all("/^[a-zA-ZÀ-ÿ]{3,30}$/", $lastname) == false){
+				echo json_encode(['error' => 'invalid lastname.']);
+				die();
+			}
+			if(preg_match_all("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email) == false){
+				echo json_encode(['error' => 'invalid email.']);
+				die();
+			}
+			if($gender != 'masculino' || $gender != 'femenino'){
+				echo json_encode(['error' => 'invalid email.']);
+				die();
+			}
+			if(is_numeric($id) == false){
+				echo json_encode(['error' => 'invalid id.']);
+				die();
+			}
 
 			$this->name = $name;
 			$this->lastname = $lastname;
@@ -91,6 +133,10 @@
 		}
 
 		public function deleteUser($id){
+			if(is_numeric($id) == false){
+				echo json_encode(['error' => 'invalid id.']);
+				die();
+			}
 			$this->id = $id;
 			try {
 				
