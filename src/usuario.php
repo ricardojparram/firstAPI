@@ -29,8 +29,11 @@
 				echo json_encode(['error' => 'invalid email.']);
 				die();
 			}
-			if($gender != 'masculino' || $gender != 'femenino'){
-				echo json_encode(['error' => 'invalid email.']);
+			if($gender != 'masculino'){
+				echo json_encode(['error' => 'invalid gender.']);
+				die();
+			}else if($gender != 'femenino'){
+				echo json_encode(['error' => 'invalid gender.']);
 				die();
 			}
 
@@ -101,8 +104,11 @@
 				echo json_encode(['error' => 'invalid email.']);
 				die();
 			}
-			if($gender != 'masculino' || $gender != 'femenino'){
-				echo json_encode(['error' => 'invalid email.']);
+			if($gender != 'masculino'){
+				echo json_encode(['error' => 'invalid gender.']);
+				die();
+			}else if($gender != 'femenino'){
+				echo json_encode(['error' => 'invalid gender.']);
 				die();
 			}
 			if(is_numeric($id) == false){

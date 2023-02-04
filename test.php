@@ -29,10 +29,10 @@
 				url: 'http://localhost/ricardoAPI/',
 				data: {
 					// id: '5',
-					// name:'José',
-					// lastname: 'Alvarado',
-					// email: 'jose.a@hotmail.com',
-					// gender: 'masculino'
+					name:'Alberto',
+					lastname: 'Rodriguez',
+					email: 'arodriguez@gmail.com',
+					gender: 'masculino'
 				},
 				success(e){
 					console.log(e);
